@@ -5,7 +5,7 @@ GraphNode::GraphNode(int id)
 {
     _id = id;
 }
-/*
+/* TODO: to complete delete
 GraphNode::~GraphNode()
 {
     //// STUDENT CODE
