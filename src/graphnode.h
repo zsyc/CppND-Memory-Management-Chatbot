@@ -32,7 +32,7 @@ private:
 public:
     // constructor / destructor
     GraphNode(int id);
-    //~GraphNode(); // TODO: do we need destructer here?
+    ~GraphNode();
 
     // getter / setter
     int GetID() { return _id; }

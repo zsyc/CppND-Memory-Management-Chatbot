@@ -5,17 +5,17 @@ GraphNode::GraphNode(int id)
 {
     _id = id;
 }
-/* TODO: to complete delete
+
 GraphNode::~GraphNode()
 {
     //// STUDENT CODE
     ////
 
-    delete _chatBot; // raw-pointer on stack doesn't need delete
+    //delete _chatBot; 
 
     ////
     //// EOF STUDENT CODE
-}*/
+}
 
 void GraphNode::AddToken(std::string token)
 {
