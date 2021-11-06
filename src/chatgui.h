@@ -15,11 +15,9 @@ private:
     wxBitmap _image;
 
     //// STUDENT CODE done
-    ////
 
     std::unique_ptr<ChatLogic>_chatLogic = std::make_unique<ChatLogic>();
 
-    ////
     //// EOF STUDENT CODE
 
 public:
