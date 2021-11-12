@@ -17,7 +17,7 @@ using std::make_unique;
 
 ChatLogic::ChatLogic()
 {
-    //// STUDENT CODE
+    //// STUDENT CODE done
 
     // create instance of chatbot
     _chatBot = new ChatBot("../images/chatbot.png");
@@ -176,7 +176,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     }
 
     //// STUDENT CODE
-    ////
 
     // identify root node
     GraphNode *rootNode = nullptr;
@@ -197,11 +196,16 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
         }
     }
 
-    // add chatbot to graph root node
-    _chatBot->SetRootNode(rootNode);
-    rootNode->MoveChatbotHere(_chatBot);
+    // add chatbot to graph root node 
+    //_chatBot->SetRootNode(rootNode);
+    //rootNode->MoveChatbotHere(_chatBot);
+  
+    ChatBot chatbot2 = ChatBot();   //without argument means, no memory allocation in heap, that is on the stack
+    chatbot2.SetChatLogicHandle(this);
+    chatbot2.SetRootNode(rootNode);
+    rootNode->MoveChatbotHere(std::move(chatbot2));
+
     
-    ////
     //// EOF STUDENT CODE
 }
 
