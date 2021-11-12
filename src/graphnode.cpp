@@ -8,7 +8,7 @@ GraphNode::GraphNode(int id)
 
 GraphNode::~GraphNode()
 {
-    //// STUDENT CODE
+    //// STUDENT CODE done
     ////
 
     //delete _chatBot; 
@@ -27,9 +27,11 @@ void GraphNode::AddEdgeToParentNode(GraphEdge *edge)
     _parentEdges.push_back(edge);
 }
 
-void GraphNode::AddEdgeToChildNode(GraphEdge *edge)
-{
-    _childEdges.push_back(edge);
+void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge>edge)
+{   // std::move() here is very importent, teddy G said, because vector.push_back() will trigger an internal copy
+    // and delete. But according to https://yasenh.github.io/post/cpp-diary-1-emplace_back/, emplace_back() should work.
+    // But it doesn't work. It woulb be nice, if mentor read this and give some point to the problem. 
+    _childEdges.emplace_back(std::move(edge)); // get idea from https://knowledge.udacity.com/questions/520281
 }
 
 //// STUDENT CODE
@@ -50,10 +52,10 @@ void GraphNode::MoveChatbotToNewNode(GraphNode *newNode)
 
 GraphEdge *GraphNode::GetChildEdgeAtIndex(int index)
 {
-    //// STUDENT CODE
+    //// STUDENT CODE done
     ////
 
-    return _childEdges[index];
+    return (_childEdges[index]).get();
 
     ////
     //// EOF STUDENT CODE
