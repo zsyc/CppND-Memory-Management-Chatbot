@@ -42,7 +42,7 @@ ChatBot::~ChatBot()
     }
 }
 
-//// STUDENT CODE
+//// STUDENT CODE done
 // copy constructor
 ChatBot::ChatBot(const ChatBot &source)
     :_rootNode(source._rootNode), _chatLogic(source._chatLogic), _currentNode(source._currentNode)
