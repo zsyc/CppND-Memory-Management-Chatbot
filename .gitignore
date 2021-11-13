@@ -1,6 +1,6 @@
 .github/**
-.vscode/
 build/
 *.un~
 *.cpp~
 *.h~
+*.gitignore~*
