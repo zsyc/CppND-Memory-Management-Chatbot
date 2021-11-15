@@ -200,7 +200,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     //_chatBot->SetRootNode(rootNode);
     //rootNode->MoveChatbotHere(_chatBot);
   
-    ChatBot chatbot2 = ChatBot();   //without argument means, no memory allocation in heap, that is on the stack
+    ChatBot chatbot2 = ChatBot("../images/chatbot.png");   //without argument means, no memory allocation in heap, that is on the stack
     chatbot2.SetChatLogicHandle(this);
     chatbot2.SetRootNode(rootNode);
     rootNode->MoveChatbotHere(std::move(chatbot2));
