@@ -34,7 +34,7 @@ void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge>edge)
     _childEdges.emplace_back(std::move(edge)); // get idea from https://knowledge.udacity.com/questions/520281
 }
 
-//// STUDENT CODE
+//// STUDENT CODE done
 ////
 void GraphNode::MoveChatbotHere(ChatBot chatbot)
 {

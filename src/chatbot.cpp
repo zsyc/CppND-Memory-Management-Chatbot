@@ -70,7 +70,7 @@ ChatBot &ChatBot::operator=(const ChatBot &source){
 
 // move constructor
 ChatBot::ChatBot(ChatBot &&source)
-    :_currentNode(source._currentNode), _rootNode(source._currentNode), _chatLogic(source._chatLogic),\
+    :_currentNode(source._currentNode), _rootNode(source._rootNode), _chatLogic(source._chatLogic),\
     _image(source._image)
 {
     _chatLogic->SetChatbotHandle(this);

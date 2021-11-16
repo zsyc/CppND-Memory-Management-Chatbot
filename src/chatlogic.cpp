@@ -20,10 +20,10 @@ ChatLogic::ChatLogic()
     //// STUDENT CODE done
 
     // create instance of chatbot
-    _chatBot = new ChatBot("../images/chatbot.png");
+    //_chatBot = new ChatBot("../images/chatbot.png");
 
     // add pointer to chatlogic so that chatbot answers can be passed on to the GUI
-    _chatBot->SetChatLogicHandle(this);
+    //_chatBot->SetChatLogicHandle(this);
 
     //// EOF STUDENT CODE
 }
@@ -33,7 +33,7 @@ ChatLogic::~ChatLogic()
     //// STUDENT CODE done
 
     // delete chatbot instance
-    delete _chatBot;
+    //delete _chatBot;
 
     //// EOF STUDENT CODE
 }
@@ -175,7 +175,7 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
         return;
     }
 
-    //// STUDENT CODE
+    //// STUDENT CODE done
 
     // identify root node
     GraphNode *rootNode = nullptr;
@@ -200,7 +200,8 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     //_chatBot->SetRootNode(rootNode);
     //rootNode->MoveChatbotHere(_chatBot);
   
-    ChatBot chatbot2 = ChatBot("../images/chatbot.png");   //without argument means, no memory allocation in heap, that is on the stack
+    ChatBot chatbot2 = ChatBot("../images/chatbot.png"); 
+    _chatBot = &chatbot2;   // so that other functions can directly control chatbot2
     chatbot2.SetChatLogicHandle(this);
     chatbot2.SetRootNode(rootNode);
     rootNode->MoveChatbotHere(std::move(chatbot2));
